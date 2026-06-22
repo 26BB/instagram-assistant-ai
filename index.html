@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstaSuite AI - Premium Instagram Assistant</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chart.js CDN for stunning analytics charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo-area">
+                <span class="logo-icon">✨</span>
+                <h2>InstaSuite<span>AI</span></h2>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#dashboard" class="nav-item active" data-tab="dashboard">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="3" width="7" height="9" rx="1"></rect><rect x="14" y="3" width="7" height="5" rx="1"></rect><rect x="14" y="12" width="7" height="9" rx="1"></rect><rect x="3" y="16" width="7" height="5" rx="1"></rect></svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#creator" class="nav-item" data-tab="creator">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+                    <span>AI Post Creator</span>
+                </a>
+                <a href="#scheduler" class="nav-item" data-tab="scheduler">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <span>Content Calendar</span>
+                </a>
+                <a href="#competitors" class="nav-item" data-tab="competitors">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    <span>Competitor Spy</span>
+                </a>
+                <a href="#analytics" class="nav-item" data-tab="analytics">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    <span>Analytics</span>
+                </a>
+            </nav>
+            
+            <div class="user-profile">
+                <div class="profile-pic">📸</div>
+                <div class="profile-info">
+                    <h4>Grow with Alex</h4>
+                    <p>Premium Account</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Body -->
+        <main class="main-content">
+            <!-- Header bar -->
+            <header class="content-header">
+                <div class="header-left">
+                    <h1 id="page-title">Dashboard</h1>
+                    <p class="subtitle" id="page-subtitle">Welcome back, Alex. Here is your Instagram performance update.</p>
+                </div>
+                <div class="header-right">
+                    <div class="dropdown-wrapper">
+                        <select id="account-selector" class="premium-select">
+                            <option value="main">@growwithalex (Primary)</option>
+                            <option value="faceless">@stoic.hustle (Faceless Page)</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" id="quick-create-btn">
+                        <span>+ Create Post</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Scrollable Viewport -->
+            <div class="viewport">
+                
+                <!-- DASHBOARD TAB -->
+                <section id="dashboard" class="tab-pane active">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span>Total Followers</span>
+                                <span class="badge badge-success">+4.2%</span>
+                            </div>
+                            <h3>142,380</h3>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 78%"></div>
+                            </div>
+                            <span class="stat-desc">Target: 150k this month</span>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span>Engagement Rate</span>
+                                <span class="badge badge-success">+1.8%</span>
+                            </div>
+                            <h3>5.64%</h3>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 56%"></div>
+                            </div>
+                            <span class="stat-desc">Industry Avg: 3.2%</span>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span>Total Reach</span>
+                                <span class="badge badge-info">+12.4%</span>
+                            </div>
+                            <h3>1.2M</h3>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 84%"></div>
+                            </div>
+                            <span class="stat-desc">Last 30 days performance</span>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span>ManyChat Conversions</span>
+                                <span class="badge badge-success">+22.5%</span>
+                            </div>
+                            <h3>3,490</h3>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 70%"></div>
+                            </div>
+                            <span class="stat-desc">Trigger-word auto-replies</span>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="dashboard-row">
+                        <!-- Upcoming Queue -->
+                        <div class="card flex-2">
+                            <div class="card-header">
+                                <h3>Scheduled Queue</h3>
+                                <a href="#scheduler" class="card-link" onclick="switchTab('scheduler')">View Calendar</a>
+                            </div>
+                            <div class="queue-list" id="dashboard-queue">
+                                <!-- Dynamically populated -->
+                            </div>
+                        </div>
+
+                        <!-- Mini Activity Log -->
+                        <div class="card flex-1">
+                            <div class="card-header">
+                                <h3>Assistant Activity</h3>
+                            </div>
+                            <div class="activity-timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-icon hook">🪝</div>
+                                    <div class="timeline-body">
+                                        <p><strong>Hooks generated</strong> for "30 Days Content System"</p>
+                                        <small>10 mins ago</small>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-icon video">📹</div>
+                                    <div class="timeline-body">
+                                        <p><strong>B-roll prompt & thumbnail</strong> created for Stoic Theme</p>
+                                        <small>2 hours ago</small>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-icon schedule">📅</div>
+                                    <div class="timeline-body">
+                                        <p><strong>Post scheduled</strong> for Wednesday at 5:30 PM</p>
+                                        <small>Yesterday</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- AI POST CREATOR TAB -->
+                <section id="creator" class="tab-pane">
+                    <div class="creator-layout">
+                        <!-- Generator controls -->
+                        <div class="creator-left">
+                            <div class="card">
+                                <h3>Post Concept & Seed Script</h3>
+                                <p class="card-subtitle">Input your video script or core theme to generate viral social media assets.</p>
+                                
+                                <div class="form-group">
+                                    <label for="post-concept">Script / Concept Idea</label>
+                                    <textarea id="post-concept" rows="6" placeholder="Example: In this video, I will show you how I built six AI Skills inside Claude to streamline social media content creation..."></textarea>
+                                </div>
+
+                                <div class="creator-settings">
+                                    <div class="form-group">
+                                        <label for="concept-tone">Tone of Voice</label>
+                                        <select id="concept-tone" class="premium-select">
+                                            <option value="educational">Educational & Authority</option>
+                                            <option value="stoic">Stoic & Inspirational</option>
+                                            <option value="hype">High-energy / Hype</option>
+                                            <option value="minimalist">Minimalist & Direct</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="manychat-trigger">ManyChat Trigger Keyword</label>
+                                        <input type="text" id="manychat-trigger" placeholder="e.g. SKILLS" class="premium-input">
+                                    </div>
+                                </div>
+
+                                <div class="action-buttons-row">
+                                    <button class="btn btn-secondary" id="btn-generate-hooks">
+                                        <span>🪝 Generate Hooks</span>
+                                    </button>
+                                    <button class="btn btn-primary" id="btn-generate-caption">
+                                        <span>✍️ Generate Funnel Caption</span>
+                                    </button>
+                                    <button class="btn btn-accent" id="btn-generate-assets">
+                                        <span>🎨 Generate Cover & B-Roll</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Generated Hooks Box -->
+                            <div class="card" id="generated-hooks-card" style="display: none;">
+                                <div class="card-header">
+                                    <h3>Viral Hooks Generator Output</h3>
+                                    <span class="badge badge-accent">6 Variations</span>
+                                </div>
+                                <div class="hooks-list" id="hooks-output-list">
+                                    <!-- Dynamic Hooks list -->
+                                </div>
+                            </div>
+
+                            <!-- Generated Caption Box -->
+                            <div class="card" id="generated-caption-card" style="display: none;">
+                                <div class="card-header">
+                                    <h3>Frictionless Caption Funnel</h3>
+                                    <button class="btn-copy" id="btn-copy-caption">Copy Caption</button>
+                                </div>
+                                <div class="caption-preview-box">
+                                    <pre id="caption-output-content"></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Simulated Preview & Assets -->
+                        <div class="creator-right">
+                            <!-- Instagram Post Mockup -->
+                            <div class="card">
+                                <h3>Instagram Preview</h3>
+                                <div class="instagram-mockup">
+                                    <div class="mockup-header">
+                                        <div class="mockup-avatar">📸</div>
+                                        <div class="mockup-user-info">
+                                            <strong>growwithalex</strong>
+                                            <span>Original Audio</span>
+                                        </div>
+                                        <span class="mockup-dots">•••</span>
+                                    </div>
+                                    
+                                    <div class="mockup-body">
+                                        <!-- Cover image/video element -->
+                                        <div class="mockup-media-container">
+                                            <div class="mockup-overlay-text" id="mockup-overlay-title">HOW TO BUILD 6 CLAUDE SKILLS</div>
+                                            <div class="mockup-overlay-badge" id="mockup-overlay-badge">IG SKILLS</div>
+                                            <div class="mockup-media-placeholder" id="mockup-media-render">
+                                                <span class="media-icon">🎬</span>
+                                                <p>Preview Cover Design or B-Roll</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mockup-footer">
+                                        <div class="mockup-actions">
+                                            <span>❤️ 💬 ✈️</span>
+                                            <span>🔖</span>
+                                        </div>
+                                        <div class="mockup-likes">Liked by <strong>mcp_user</strong> and <strong>1,894 others</strong></div>
+                                        <div class="mockup-caption">
+                                            <strong>growwithalex</strong> <span id="mockup-caption-text">Your generated funnel caption will appear here...</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group" style="margin-top: 15px;">
+                                    <button class="btn btn-success btn-full" id="btn-add-to-scheduler" disabled>
+                                        <span>📅 Schedule Post</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- B-Roll Prompts / Higgsfield integration simulation -->
+                            <div class="card">
+                                <h3>Higgsfield B-Roll & Cover Prompts</h3>
+                                <div class="broll-prompts-list" id="broll-prompts-output">
+                                    <p class="empty-state">Generate assets to view structured image & video generation prompts.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CONTENT CALENDAR / SCHEDULER TAB -->
+                <section id="scheduler" class="tab-pane">
+                    <div class="scheduler-layout">
+                        <!-- Calendar Widget -->
+                        <div class="card flex-3">
+                            <div class="calendar-header">
+                                <h3 id="calendar-month-year">June 2026</h3>
+                                <div class="calendar-nav-buttons">
+                                    <button class="calendar-nav-btn" id="prev-month">&lt;</button>
+                                    <button class="calendar-nav-btn" id="next-month">&gt;</button>
+                                </div>
+                            </div>
+                            <div class="calendar-grid-header">
+                                <div>Sun</div>
+                                <div>Mon</div>
+                                <div>Tue</div>
+                                <div>Wed</div>
+                                <div>Thu</div>
+                                <div>Fri</div>
+                                <div>Sat</div>
+                            </div>
+                            <div class="calendar-grid" id="calendar-days">
+                                <!-- Calendar days loaded dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- Post Queue / Inspector details -->
+                        <div class="card flex-1">
+                            <h3>Post Details & Options</h3>
+                            <div class="post-detail-inspector" id="scheduler-inspector">
+                                <p class="empty-state">Select a scheduled post or date to inspect, reschedule, or publish.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- COMPETITOR SPY TAB -->
+                <section id="competitors" class="tab-pane">
+                    <div class="competitor-spy-wrapper">
+                        <!-- Input and stats summary -->
+                        <div class="card">
+                            <h3>Track New Competitor</h3>
+                            <p class="card-subtitle">Monitor key social media creators and analyze their highest-performing styles.</p>
+                            <div class="track-input-row">
+                                <span class="at-symbol">@</span>
+                                <input type="text" id="competitor-username" placeholder="e.g. socialgrowthexpert" class="premium-input">
+                                <button class="btn btn-primary" id="btn-track-competitor">Track Account</button>
+                            </div>
+                        </div>
+
+                        <!-- Side by Side Metrics -->
+                        <div class="card">
+                            <h3>Competitor Performance Matrix</h3>
+                            <div class="table-responsive">
+                                <table class="premium-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Account</th>
+                                            <th>Followers</th>
+                                            <th>Avg. Engagement</th>
+                                            <th>Growth (30d)</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="competitors-comparison-rows">
+                                        <!-- Dynamically loaded -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Top Posts Feed and Gap Analysis -->
+                        <div class="dashboard-row">
+                            <!-- Competitor top posts feeds -->
+                            <div class="card flex-2">
+                                <h3>Top Performing Content (Spy Feed)</h3>
+                                <p class="card-subtitle">High engagement posts classified by viral hook format.</p>
+                                <div class="spy-feed-list" id="competitor-spy-feed">
+                                    <!-- Dynamic feed -->
+                                </div>
+                            </div>
+
+                            <!-- Content Gap Analysis -->
+                            <div class="card flex-1">
+                                <h3>Content Gap & AI Ideas</h3>
+                                <p class="card-subtitle">Topics they are winning on, custom-tailored for your account style.</p>
+                                <div class="gap-ideas-list" id="competitor-gap-ideas">
+                                    <!-- Dynamic AI gap recommendations -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ANALYTICS TAB -->
+                <section id="analytics" class="tab-pane">
+                    <div class="analytics-layout">
+                        <!-- Main growth chart -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Account Growth Trend</h3>
+                                <div class="chart-legend">
+                                    <span class="legend-item"><span class="legend-color" style="background: var(--primary);"></span>@growwithalex</span>
+                                    <span class="legend-item"><span class="legend-color" style="background: var(--accent);"></span>Competitor Average</span>
+                                </div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="growthChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Detailed breakdowns -->
+                        <div class="dashboard-row">
+                            <div class="card flex-1">
+                                <h3>Engagement by Post Type</h3>
+                                <div class="chart-container-half">
+                                    <canvas id="postTypeChart"></canvas>
+                                </div>
+                            </div>
+                            <div class="card flex-1">
+                                <h3>Optimal Posting Times</h3>
+                                <div class="chart-container-half">
+                                    <canvas id="postingTimesChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Quick Post Creator Modal -->
+    <div class="modal-overlay" id="quick-create-modal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Quick Post Event Creator</h3>
+                <span class="modal-close" id="modal-close-btn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="modal-title">Post Title</label>
+                    <input type="text" id="modal-title" placeholder="e.g. 6 Claude Skills" class="premium-input">
+                </div>
+                <div class="form-group">
+                    <label for="modal-date">Date & Time</label>
+                    <input type="datetime-local" id="modal-date" class="premium-input">
+                </div>
+                <div class="form-group">
+                    <label for="modal-notes">Outline / Script Reference</label>
+                    <textarea id="modal-notes" rows="4" placeholder="Enter notes or caption outline..." class="premium-textarea"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="modal-cancel-btn">Cancel</button>
+                <button class="btn btn-primary" id="modal-submit-btn">Add to Calendar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
